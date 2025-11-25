@@ -1,6 +1,7 @@
 // Loading Bar Animation
 const loadingBar = document.getElementById('loadingBar');
 const loadingProgress = document.getElementById('loadingProgress');
+const loadingPercentage = document.getElementById('loadingPercentage');
 
 function simulateLoading() {
     let progress = 0;
@@ -9,16 +10,17 @@ function simulateLoading() {
         if (progress >= 100) {
             progress = 100;
             clearInterval(interval);
+            loadingProgress.style.width = '100%';
+            loadingPercentage.textContent = '100%';
             setTimeout(() => {
-                loadingProgress.style.width = '100%';
-                setTimeout(() => {
-                    loadingBar.classList.add('hidden');
-                    // Start page animations after loading
-                    initPageAnimations();
-                }, 300);
-            }, 100);
+                loadingBar.classList.add('hidden');
+                // Start page animations after loading
+                initPageAnimations();
+            }, 500);
         } else {
+            const roundedProgress = Math.min(Math.round(progress), 99);
             loadingProgress.style.width = progress + '%';
+            loadingPercentage.textContent = roundedProgress + '%';
         }
     }, 100);
 }
