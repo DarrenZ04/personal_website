@@ -34,39 +34,32 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">Hello, I'm <span class="highlight">Darren Zeng</span></h1>
-            <p class="hero-subtitle">EECS & Data Science @ UC Berkeley • Software & Data Engineer</p>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary">View My Work</a>
-                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section">
+    <!-- Hero Section with About -->
+    <section id="about" class="hero">
         <div class="container">
-            <div class="about-content">
-                <div class="about-image-container">
-                    <img src="images/headshot.jpg" alt="Darren Zeng" class="profile-image" id="profileImage">
-                    <div class="image-placeholder" id="imagePlaceholder">
-                        <span>Add your photo</span>
+            <div class="hero-content">
+                <div class="hero-header">
+                    <div class="about-image-container">
+                        <img src="images/headshot.jpg" alt="Darren Zeng" class="profile-image" id="profileImage">
+                        <div class="image-placeholder" id="imagePlaceholder">
+                            <span>Add your photo</span>
+                        </div>
+                    </div>
+                    <div class="hero-intro">
+                        <h1 class="hero-title"><span class="highlight">Darren Zeng</span></h1>
+                        <p class="hero-subtitle">EECS & Data Science @ UC Berkeley</p>
+                        <div class="hero-buttons">
+                            <a href="#projects" class="btn btn-primary">View My Work</a>
+                            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                        </div>
                     </div>
                 </div>
                 <div class="about-text">
                     <h2 class="about-title">About Me</h2>
                     <p>
-                        I'm an undergraduate at UC Berkeley studying Electrical Engineering & Computer Science with a Data Science minor. 
-                        I love building end-to-end systems that turn data into decisions—whether that's fantasy basketball draft tools, 
+                        I'm an undergraduate at UC Berkeley studying Electrical Engineering & Computer Science, and Data Science. 
+                        I love building end-to-end systems that turn data into decisions, whether that's fantasy basketball draft tools, 
                         quantitative trading models, or secure distributed systems.
-                    </p>
-                    <p>
-                        My interests sit at the intersection of software engineering, machine learning, and analytics. 
-                        Recently, I've been working on Hooplytics, a fantasy basketball draft optimizer, a quantitative trading pipeline (Quanta), 
-                        and a custom chess engine. I enjoy tackling hard problems, shipping real products, and learning new technologies along the way.
                     </p>
                 </div>
             </div>
@@ -87,13 +80,13 @@
                         and injury reports. Built a data pipeline to aggregate and standardize player metrics for the 2024–25 season, 
                         and implemented algorithms to generate category-based, injury-adjusted player rankings and draft recommendations.
                     </p>
-                    <div class="project-tags">
+                    <!-- <div class="project-tags">
                         <span class="tag">Python</span>
                         <span class="tag">Flask</span>
                         <span class="tag">nba_api</span>
                         <span class="tag">Data Pipelines</span>
                         <span class="tag">Vercel</span>
-                    </div>
+                    </div> -->
                     <a href="https://hooplytics.vercel.app/" class="project-link" target="_blank" rel="noopener noreferrer">
                         Visit Hooplytics →
                     </a>
@@ -108,12 +101,12 @@
                         Used techniques such as iterative deepening, alpha-beta pruning, transposition tables, 
                         and Zobrist hashing to efficiently explore game trees and make competitive moves against human players.
                     </p>
-                    <div class="project-tags">
+                    <!-- <div class="project-tags">
                         <span class="tag">Python</span>
                         <span class="tag">Algorithms</span>
                         <span class="tag">Search</span>
                         <span class="tag">Data Structures</span>
-                    </div>
+                    </div> -->
                     <a href="https://chesser-bot.vercel.app/" class="project-link" target="_blank" rel="noopener noreferrer">
                         Play Against The Chess Bot →
                     </a>
@@ -147,19 +140,7 @@
         <div class="container">
             <h2 class="section-title">Relevant Coursework</h2>
             <div class="coursework-grid">
-                <div class="coursework-card">
-                    <h3 class="coursework-title">COMPSCI 161 – Computer Security</h3>
-                    <p class="coursework-description">
-                        Principles of secure system design, cryptography, network security, and real-world attack vectors. 
-                        Building secure systems with authenticated encryption, key management, and access control.
-                    </p>
-                    <div class="coursework-topics">
-                        <span class="topic">Cryptography</span>
-                        <span class="topic">Web Security</span>
-                        <span class="topic">Threat Modeling</span>
-                    </div>
-                </div>
-
+                <!-- COMPSCI Courses -->
                 <div class="coursework-card">
                     <h3 class="coursework-title">COMPSCI 189 – Introduction to Machine Learning</h3>
                     <p class="coursework-description">
@@ -170,70 +151,6 @@
                         <span class="topic">ML Algorithms</span>
                         <span class="topic">Neural Networks</span>
                         <span class="topic">Model Evaluation</span>
-                    </div>
-                </div>
-
-                <div class="coursework-card">
-                    <h3 class="coursework-title">DATA C104 – Human Contexts and Ethics of Data</h3>
-                    <p class="coursework-description">
-                        Exploring ethical considerations, social impacts, and human-centered approaches to data science. 
-                        Examining privacy, bias, fairness, and the responsible use of data in society.
-                    </p>
-                    <div class="coursework-topics">
-                        <span class="topic">Data Ethics</span>
-                        <span class="topic">Privacy</span>
-                        <span class="topic">Fairness & Bias</span>
-                    </div>
-                </div>
-
-                <div class="coursework-card">
-                    <h3 class="coursework-title">COMPSCI 61C – Great Ideas of Computer Architecture</h3>
-                    <p class="coursework-description">
-                        Machine structures and computer architecture. Covers C programming, assembly language, 
-                        memory management, caching, and parallel computing concepts.
-                    </p>
-                    <div class="coursework-topics">
-                        <span class="topic">Computer Architecture</span>
-                        <span class="topic">C Programming</span>
-                        <span class="topic">Assembly</span>
-                    </div>
-                </div>
-
-                <div class="coursework-card">
-                    <h3 class="coursework-title">EECS 16B – Designing Information Devices and Systems II</h3>
-                    <p class="coursework-description">
-                        Continuation of EECS 16A. Covers circuits, signals, control systems, and machine learning fundamentals 
-                        with applications to real-world systems.
-                    </p>
-                    <div class="coursework-topics">
-                        <span class="topic">Circuits</span>
-                        <span class="topic">Control Systems</span>
-                        <span class="topic">Signals</span>
-                    </div>
-                </div>
-
-                <div class="coursework-card">
-                    <h3 class="coursework-title">PHYSICS 7A – Physics for Scientists and Engineers</h3>
-                    <p class="coursework-description">
-                        Mechanics, waves, and thermodynamics. Problem-solving and mathematical modeling of physical systems.
-                    </p>
-                    <div class="coursework-topics">
-                        <span class="topic">Mechanics</span>
-                        <span class="topic">Waves</span>
-                        <span class="topic">Thermodynamics</span>
-                    </div>
-                </div>
-
-                <div class="coursework-card">
-                    <h3 class="coursework-title">COMPSCI 70 – Discrete Mathematics and Probability Theory</h3>
-                    <p class="coursework-description">
-                        Mathematical foundations for computer science. Covers logic, proofs, discrete structures, 
-                        probability theory, and their applications to algorithms and complexity.
-                    </p>
-                    <div class="coursework-topics">
-                        <span class="topic">Discrete Math</span>
-                        <span class="topic">Probability</span>
-                        <span class="topic">Proofs</span>
                     </div>
                 </div>
 
@@ -251,15 +168,41 @@
                 </div>
 
                 <div class="coursework-card">
-                    <h3 class="coursework-title">DATA C8 – Foundations of Data Science</h3>
+                    <h3 class="coursework-title">COMPSCI 161 – Computer Security</h3>
                     <p class="coursework-description">
-                        Introduction to data science using Python. Covers data manipulation, visualization, 
-                        statistical inference, and basic machine learning concepts.
+                        Principles of secure system design, cryptography, network security, and real-world attack vectors. 
+                        Building secure systems with authenticated encryption, key management, and access control.
                     </p>
                     <div class="coursework-topics">
-                        <span class="topic">Python</span>
-                        <span class="topic">Data Visualization</span>
-                        <span class="topic">Statistics</span>
+                        <span class="topic">Cryptography</span>
+                        <span class="topic">Web Security</span>
+                        <span class="topic">Threat Modeling</span>
+                    </div>
+                </div>
+
+                <div class="coursework-card">
+                    <h3 class="coursework-title">COMPSCI 70 – Discrete Mathematics and Probability Theory</h3>
+                    <p class="coursework-description">
+                        Mathematical foundations for computer science. Covers logic, proofs, discrete structures, 
+                        probability theory, and their applications to algorithms and complexity.
+                    </p>
+                    <div class="coursework-topics">
+                        <span class="topic">Discrete Math</span>
+                        <span class="topic">Probability</span>
+                        <span class="topic">Proofs</span>
+                    </div>
+                </div>
+
+                <div class="coursework-card">
+                    <h3 class="coursework-title">COMPSCI 61C – Great Ideas of Computer Architecture</h3>
+                    <p class="coursework-description">
+                        Machine structures and computer architecture. Covers C programming, assembly language, 
+                        memory management, caching, and parallel computing concepts.
+                    </p>
+                    <div class="coursework-topics">
+                        <span class="topic">Computer Architecture</span>
+                        <span class="topic">C Programming</span>
+                        <span class="topic">Assembly</span>
                     </div>
                 </div>
 
@@ -276,6 +219,47 @@
                     </div>
                 </div>
 
+                <!-- DATA Courses -->
+                <div class="coursework-card">
+                    <h3 class="coursework-title">DATA C104 – Human Contexts and Ethics of Data</h3>
+                    <p class="coursework-description">
+                        Exploring ethical considerations, social impacts, and human-centered approaches to data science. 
+                        Examining privacy, bias, fairness, and the responsible use of data in society.
+                    </p>
+                    <div class="coursework-topics">
+                        <span class="topic">Data Ethics</span>
+                        <span class="topic">Privacy</span>
+                        <span class="topic">Fairness & Bias</span>
+                    </div>
+                </div>
+
+                <div class="coursework-card">
+                    <h3 class="coursework-title">DATA C8 – Foundations of Data Science</h3>
+                    <p class="coursework-description">
+                        Introduction to data science using Python. Covers data manipulation, visualization, 
+                        statistical inference, and basic machine learning concepts.
+                    </p>
+                    <div class="coursework-topics">
+                        <span class="topic">Python</span>
+                        <span class="topic">Data Visualization</span>
+                        <span class="topic">Statistics</span>
+                    </div>
+                </div>
+
+                <!-- EECS Courses -->
+                <div class="coursework-card">
+                    <h3 class="coursework-title">EECS 16B – Designing Information Devices and Systems II</h3>
+                    <p class="coursework-description">
+                        Continuation of EECS 16A. Covers circuits, signals, control systems, and machine learning fundamentals 
+                        with applications to real-world systems.
+                    </p>
+                    <div class="coursework-topics">
+                        <span class="topic">Circuits</span>
+                        <span class="topic">Control Systems</span>
+                        <span class="topic">Signals</span>
+                    </div>
+                </div>
+
                 <div class="coursework-card">
                     <h3 class="coursework-title">EECS 16A – Designing Information Devices and Systems I</h3>
                     <p class="coursework-description">
@@ -289,6 +273,7 @@
                     </div>
                 </div>
 
+                <!-- ENGIN Courses -->
                 <div class="coursework-card">
                     <h3 class="coursework-title">ENGIN 7 – Introduction to Computer Programming</h3>
                     <p class="coursework-description">
@@ -302,6 +287,7 @@
                     </div>
                 </div>
 
+                <!-- MATH Courses -->
                 <div class="coursework-card">
                     <h3 class="coursework-title">MATH 53 – Multivariable Calculus</h3>
                     <p class="coursework-description">
@@ -312,6 +298,19 @@
                         <span class="topic">Calculus</span>
                         <span class="topic">Vectors</span>
                         <span class="topic">Integration</span>
+                    </div>
+                </div>
+
+                <!-- PHYSICS Courses -->
+                <div class="coursework-card">
+                    <h3 class="coursework-title">PHYSICS 7A – Physics for Scientists and Engineers</h3>
+                    <p class="coursework-description">
+                        Mechanics, waves, and thermodynamics. Problem-solving and mathematical modeling of physical systems.
+                    </p>
+                    <div class="coursework-topics">
+                        <span class="topic">Mechanics</span>
+                        <span class="topic">Waves</span>
+                        <span class="topic">Thermodynamics</span>
                     </div>
                 </div>
             </div>

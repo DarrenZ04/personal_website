@@ -171,13 +171,13 @@ body {
     justify-content: center;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
-    text-align: center;
-    padding: 2rem;
+    padding: 4rem 2rem;
     margin-top: 70px;
 }
 
 .hero-content {
-    max-width: 800px;
+    max-width: 1200px;
+    width: 100%;
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 1s ease 0.3s, transform 1s ease 0.3s;
@@ -188,6 +188,39 @@ body {
     transform: translateY(0);
 }
 
+.hero-header {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    text-align: left;
+}
+
+.hero-intro {
+    flex: 1;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    text-align: left;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
 .hero-title {
     font-size: 3.5rem;
     font-weight: 700;
@@ -195,7 +228,7 @@ body {
 }
 
 .highlight {
-    color: #fbbf24;
+    color: #8fbef1;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
@@ -242,11 +275,14 @@ body {
 }
 
 .btn-primary {
-    background-color: white;
-    color: var(--primary-color);
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
 }
 
 .btn-primary:hover {
+    background-color: white;
+    color: var(--primary-color);
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
@@ -316,7 +352,7 @@ body {
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
-    color: var(--text-primary);
+    color: white;
     position: relative;
     display: inline-block;
 }
@@ -328,7 +364,7 @@ body {
     left: 0;
     width: 50px;
     height: 3px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    background: #8fbef1;
     border-radius: 2px;
 }
 
@@ -352,10 +388,10 @@ body {
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
-    border: 4px solid var(--primary-color);
-    box-shadow: var(--shadow-lg);
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     display: none;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .profile-image.loaded {
@@ -364,27 +400,31 @@ body {
 
 .profile-image:hover {
     transform: scale(1.05);
+    border-color: rgba(255, 255, 255, 0.6);
 }
 
 .image-placeholder {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
     font-weight: 600;
     font-size: 1.125rem;
-    border: 4px solid var(--primary-color);
-    box-shadow: var(--shadow-lg);
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     cursor: pointer;
     transition: var(--transition);
 }
 
 .image-placeholder:hover {
     transform: scale(1.05);
+    border-color: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.15);
 }
 
 .image-placeholder.hidden {
@@ -393,11 +433,16 @@ body {
 
 .about-text {
     flex: 1;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .about-text p {
     font-size: 1.125rem;
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.95);
     margin-bottom: 1.5rem;
     line-height: 1.8;
 }
@@ -671,12 +716,42 @@ a, button {
         left: 0;
     }
 
+    .hero {
+        padding: 2rem 1rem;
+    }
+
+    .hero-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .hero-intro {
+        text-align: center;
+    }
+
     .hero-title {
         font-size: 2.5rem;
+        text-align: center;
     }
 
     .hero-subtitle {
         font-size: 1.25rem;
+        text-align: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .about-image-container {
+        width: 250px;
+        height: 250px;
+        margin: 0 auto;
+    }
+
+    .about-text {
+        padding: 1.5rem;
     }
 
     .section-title {

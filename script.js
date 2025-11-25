@@ -59,6 +59,13 @@ function initPageAnimations() {
     if (heroContent) {
         setTimeout(() => {
             heroContent.classList.add('animate');
+            // Animate about image container when hero loads
+            const aboutImageContainer = document.querySelector('.about-image-container');
+            if (aboutImageContainer) {
+                setTimeout(() => {
+                    aboutImageContainer.classList.add('animate');
+                }, 400);
+            }
         }, 300);
     }
 
