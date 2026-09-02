@@ -3,316 +3,289 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Darren Zeng - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Darren Zeng</title>
+    <meta name="description" content="Darren Zeng is an EECS and Data Science student at UC Berkeley who builds systems that turn data into decisions.">
+    <meta name="theme-color" content="#FBFAF6">
+    <meta name="color-scheme" content="light">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Darren Zeng">
+    <meta property="og:description" content="EECS and Data Science at UC Berkeley. I build systems that turn data into decisions.">
+    <meta property="og:url" content="https://darrenzeng.com/">
+    <meta property="og:image" content="https://darrenzeng.com/images/og.svg">
+    <meta property="og:image:type" content="image/svg+xml">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23FBFAF6'/%3E%3Ctext x='16' y='23' font-family='sans-serif' font-size='17' font-weight='700' fill='%231B44E0' text-anchor='middle'%3EDZ%3C/text%3E%3C/svg%3E">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <!-- Scroll Progress Bar -->
-    <div class="scroll-progress" id="scrollProgress"></div>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">Darren Zeng</div>
-            <ul class="nav-menu">
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#coursework" class="nav-link">Coursework</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="progress" aria-hidden="true"></div>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <nav class="nav" id="nav">
+        <a href="#about" class="nav__brand" translate="no">Darren Zeng</a>
+        <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </button>
+        <ul class="nav__links" id="navLinks">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#coursework">Coursework</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </nav>
 
-    <!-- Hero Section with About -->
-    <section id="about" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-header">
-                    <div class="about-image-container">
-                        <img src="images/headshot.JPG" alt="Darren Zeng" class="profile-image" id="profileImage">
-                        <div class="image-placeholder" id="imagePlaceholder">
-                            <span>Add your photo</span>
-                        </div>
-                    </div>
-                    <div class="hero-intro">
-                        <h1 class="hero-title"><span class="highlight">Darren Zeng</span></h1>
-                        <p class="hero-subtitle">EECS & Data Science @ UC Berkeley</p>
-                        <div class="hero-buttons">
-                            <a href="#projects" class="btn btn-primary">View My Work</a>
-                            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-text" data-reveal="up">
-                    <h2 class="about-title">About Me</h2>
-                    <p>
-                        I'm an undergraduate at UC Berkeley studying Electrical Engineering & Computer Science, and Data Science.
-                        I love building end-to-end systems that turn data into decisions, whether that's fantasy basketball draft tools,
-                        quantitative trading models, or secure distributed systems. I love working out and playing basketball in my free time.
-                        Feel free to contact me at darrenzeng@berkeley.edu.
+    <main id="main">
+
+        <section id="about" class="hero has-decor">
+            <canvas id="grid" class="hero__canvas" aria-hidden="true"></canvas>
+
+            <span class="decor decor--circle" aria-hidden="true" style="--c: var(--coral); --s: 180px; top: 13%; right: 6%;"></span>
+            <span class="decor decor--square" aria-hidden="true" style="--c: var(--blue); --s: 92px; --r: 14deg; top: 24%; right: 24%;"></span>
+            <span class="decor decor--tri" aria-hidden="true" style="--c-rgb: var(--amber-rgb); --s: 130px; --r: -10deg; bottom: 11%; right: 13%;"></span>
+            <span class="decor decor--circle-fill" aria-hidden="true" style="--c-rgb: var(--green-rgb); --s: 68px; bottom: 27%; right: 31%;"></span>
+            <span class="decor decor--plus" aria-hidden="true" style="--c: var(--blue); --s: 36px; bottom: 15%; left: 19%;"></span>
+            <span class="decor decor--arc" aria-hidden="true" style="--c: var(--green); --s: 140px; --r: 135deg; bottom: -4%; left: 3%;"></span>
+            <span class="decor decor--dots" aria-hidden="true" style="--c-rgb: var(--coral-rgb); --s: 116px; top: 9%; left: 1%;"></span>
+            <span class="decor decor--square-fill" aria-hidden="true" style="--c-rgb: var(--blue-rgb); --s: 54px; --r: -16deg; top: 62%; right: 4%;"></span>
+
+            <div class="wrap hero__inner">
+                <div class="hero__text">
+                    <p class="hero__eyebrow">EECS and Data Science, UC Berkeley</p>
+                    <h1 class="hero__name" id="heroName">Darren Zeng</h1>
+                    <p class="hero__bio">
+                        I build systems that turn data into decisions: draft tools,
+                        trading models, and distributed systems.
                     </p>
+                    <div class="hero__cta">
+                        <a href="#projects" class="btn">View work</a>
+                        <a href="mailto:darrenzeng@berkeley.edu" class="btn btn--ghost">darrenzeng@berkeley.edu</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section section-alt">
-        <div class="container">
-            <h2 class="section-title" data-reveal="up">Projects</h2>
-            <div class="projects-grid">
-                <!-- Project 1: Hooplytics -->
-                <div class="project-card" data-reveal="left">
-                    <img src="images/curry.png" alt="Hooplytics Project" class="project-image">
-                    <h3 class="project-title">Fantasy Basketball Draft Optimizer</h3>
-                    <p class="project-description">
-                        Full-stack web application that optimizes fantasy basketball draft strategies using real-time NBA statistics
-                        and injury reports. Built a data pipeline to aggregate and standardize player metrics for the 2024–25 season,
-                        and implemented algorithms to generate category-based, injury-adjusted player rankings and draft recommendations.
-                    </p>
-                    <a href="https://hooplytics.vercel.app/" class="project-link" target="_blank" rel="noopener noreferrer">
-                        Visit Hooplytics →
+        <section id="experience" class="section section--experience has-decor">
+            <span class="decor decor--circle" aria-hidden="true" style="--c: var(--coral); --s: 128px; top: 13%; right: 6%;"></span>
+            <span class="decor decor--plus" aria-hidden="true" style="--c: var(--amber); --s: 30px; bottom: 18%; right: 21%;"></span>
+            <div class="wrap">
+                <h2 class="section__title fade-in">Experience</h2>
+                <div class="xp">
+                    <ol class="xp__rows" aria-label="Work experience timeline">
+                        <li class="xp__row fade-in" style="--hue: var(--blue); --hue-rgb: var(--blue-rgb); --hue-ink: var(--blue-ink); --s: 91%; --w: 6%;">
+                            <div class="xp__label">
+                                <span class="xp__logo">
+                                    <img src="images/visa_logo.jpg" alt="Visa logo" width="48" height="48" loading="lazy" decoding="async">
+                                    <span class="xp__logo-fallback" aria-hidden="true">V</span>
+                                </span>
+                                <div class="xp__meta">
+                                    <h3 class="xp__role">Software Engineering Intern</h3>
+                                    <p class="xp__org">Visa</p>
+                                    <p class="xp__dates" translate="no">Jun 2026 - Aug 2026</p>
+                                </div>
+                            </div>
+                            <div class="xp__track" aria-hidden="true"><span class="xp__bar"></span></div>
+                        </li>
+                        <li class="xp__row fade-in" style="--hue: var(--coral); --hue-rgb: var(--coral-rgb); --hue-ink: var(--coral-ink); --s: 75%; --w: 25%;">
+                            <div class="xp__label">
+                                <span class="xp__logo">
+                                    <img src="images/hero2_logo.jpg" alt="HERO2 logo" width="48" height="48" loading="lazy" decoding="async">
+                                    <span class="xp__logo-fallback" aria-hidden="true">H</span>
+                                </span>
+                                <div class="xp__meta">
+                                    <h3 class="xp__role">Software Engineer</h3>
+                                    <p class="xp__org">HERO2</p>
+                                    <p class="xp__dates" translate="no">Jan 2026 - Present</p>
+                                </div>
+                            </div>
+                            <div class="xp__track" aria-hidden="true"><span class="xp__bar"></span></div>
+                        </li>
+                        <li class="xp__row fade-in" style="--hue: var(--amber); --hue-rgb: var(--amber-rgb); --hue-ink: var(--amber-ink); --s: 0%; --w: 13%;">
+                            <div class="xp__label">
+                                <span class="xp__logo">
+                                    <img src="images/taiwanese_american_student_association_tasa_at_berkeley_logo.jpg" alt="Taiwanese American Student Association logo" width="48" height="48" loading="lazy" decoding="async">
+                                    <span class="xp__logo-fallback" aria-hidden="true">T</span>
+                                </span>
+                                <div class="xp__meta">
+                                    <h3 class="xp__role">Web Developer</h3>
+                                    <p class="xp__org">Taiwanese American Student Association</p>
+                                    <p class="xp__dates" translate="no">Jan 2024 - May 2024</p>
+                                </div>
+                            </div>
+                            <div class="xp__track" aria-hidden="true"><span class="xp__bar"></span></div>
+                        </li>
+                    </ol>
+                    <div class="xp__axis" aria-hidden="true">
+                        <span class="xp__tick" style="left: 0%;">2024</span>
+                        <span class="xp__tick" style="left: 37%;">2025</span>
+                        <span class="xp__tick" style="left: 75%;">2026</span>
+                        <span class="xp__tick xp__tick--now" style="left: 100%;">Now</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section section--projects has-decor">
+            <span class="decor decor--circle" aria-hidden="true" style="--c: var(--coral); --s: 150px; top: 12%; right: 5%;"></span>
+            <span class="decor decor--tri" aria-hidden="true" style="--c-rgb: var(--blue-rgb); --s: 120px; --r: 8deg; bottom: 9%; left: 3%;"></span>
+            <div class="wrap">
+                <h2 class="section__title fade-in">Projects</h2>
+                <div class="work">
+                    <a class="work__item fade-in" href="https://hooplytics.vercel.app/" target="_blank" rel="noopener noreferrer">
+                        <div class="work__media">
+                            <img src="images/curry.png" alt="Fantasy Basketball Draft Optimizer interface"
+                                 width="350" height="254" loading="lazy" decoding="async">
+                        </div>
+                        <div class="work__body">
+                            <h3 class="work__name">Fantasy Basketball Draft Optimizer</h3>
+                            <p class="work__desc">
+                                Real-time NBA draft optimizer with injury-adjusted rankings, category
+                                scoring, and a full data pipeline for the 2024-25 season.
+                            </p>
+                            <!-- TODO: replace with the real stack, e.g. Python, Next.js, PostgreSQL -->
+                            <ul class="work__stack">
+                                <li class="work__tag work__tag--todo">Add tech stack</li>
+                            </ul>
+                            <span class="work__go">hooplytics.vercel.app <span class="arw" aria-hidden="true">&#8599;</span></span>
+                        </div>
+                    </a>
+
+                    <a class="work__item fade-in" href="https://chesser-bot.vercel.app/" target="_blank" rel="noopener noreferrer">
+                        <div class="work__media">
+                            <img src="images/Chess.jpg" alt="Chess board"
+                                 width="1600" height="1067" loading="lazy" decoding="async">
+                        </div>
+                        <div class="work__body">
+                            <h3 class="work__name">Chess Engine</h3>
+                            <p class="work__desc">
+                                Built from scratch with alpha-beta pruning, iterative deepening,
+                                transposition tables, and Zobrist hashing.
+                            </p>
+                            <!-- TODO: replace with the real stack, e.g. Java, JavaScript, WebAssembly -->
+                            <ul class="work__stack">
+                                <li class="work__tag work__tag--todo">Add tech stack</li>
+                            </ul>
+                            <span class="work__go">chesser-bot.vercel.app <span class="arw" aria-hidden="true">&#8599;</span></span>
+                        </div>
                     </a>
                 </div>
-
-                <!-- Project 2: Chess Bot -->
-                <div class="project-card" data-reveal="right">
-                    <img src="images/Chess.jpg" alt="Chess Bot Project" class="project-image">
-                    <h3 class="project-title">Custom Chess Bot</h3>
-                    <p class="project-description">
-                        Implemented a chess engine from scratch with move generation, search, and evaluation.
-                        Used techniques such as iterative deepening, alpha-beta pruning, transposition tables,
-                        and Zobrist hashing to efficiently explore game trees and make competitive moves against human players.
-                    </p>
-                    <a href="https://chesser-bot.vercel.app/" class="project-link" target="_blank" rel="noopener noreferrer">
-                        Play Against The Chess Bot →
-                    </a>
-                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Coursework Section -->
-    <section id="coursework" class="section">
-        <div class="container">
-            <h2 class="section-title" data-reveal="up">Relevant Coursework</h2>
-            <div class="coursework-grid">
-                <!-- COMPSCI Courses -->
-                <div class="coursework-card" data-reveal="up">
-                    <h3 class="coursework-title">COMPSCI 189 – Introduction to Machine Learning</h3>
-                    <p class="coursework-description">
-                        Comprehensive introduction to machine learning algorithms, theory, and applications.
-                        Covering supervised and unsupervised learning, neural networks, and model evaluation.
-                    </p>
-                    <div class="coursework-topics">
-                        <span class="topic">ML Algorithms</span>
-                        <span class="topic">Neural Networks</span>
-                        <span class="topic">Model Evaluation</span>
+        <section id="coursework" class="section section--coursework has-decor">
+            <span class="decor decor--square" aria-hidden="true" style="--c: var(--green); --s: 110px; --r: -14deg; top: 14%; right: 6%;"></span>
+            <span class="decor decor--plus" aria-hidden="true" style="--c: var(--coral); --s: 32px; bottom: 20%; left: 7%;"></span>
+            <div class="wrap">
+                <h2 class="section__title fade-in">Coursework</h2>
+                <div class="courses__chart fade-in" role="img" aria-label="16 courses across three areas: 8 Computer Science, 3 Data Science, 5 EECS, Math and Physics">
+                    <div class="courses__track" aria-hidden="true">
+                        <span style="--g: var(--blue); flex: 8;"></span>
+                        <span style="--g: var(--amber); flex: 3;"></span>
+                        <span style="--g: var(--green); flex: 5;"></span>
                     </div>
+                    <ul class="courses__legend" aria-hidden="true">
+                        <li style="--g: var(--blue);">Computer Science <b>8</b></li>
+                        <li style="--g: var(--amber);">Data Science <b>3</b></li>
+                        <li style="--g: var(--green);">EECS, Math and Physics <b>5</b></li>
+                    </ul>
                 </div>
-
-                <div class="coursework-card" data-reveal="up">
-                    <h3 class="coursework-title">COMPSCI 188 – Introduction to Artificial Intelligence</h3>
-                    <p class="coursework-description">
-                        Introduction to AI concepts including search algorithms, game trees, constraint satisfaction,
-                        probabilistic models, and machine learning fundamentals.
-                    </p>
-                    <div class="coursework-topics">
-                        <span class="topic">Search Algorithms</span>
-                        <span class="topic">Game Trees</span>
-                        <span class="topic">Probabilistic Models</span>
+                <div class="courses">
+                    <div class="courses__group fade-in">
+                        <h3 class="courses__dept">Computer Science</h3>
+                        <ul class="courses__list">
+                            <li><span class="courses__code" translate="no">CS 189</span><span class="courses__name">Introduction to Machine Learning</span></li>
+                            <li><span class="courses__code" translate="no">CS 188</span><span class="courses__name">Introduction to Artificial Intelligence</span></li>
+                            <li><span class="courses__code" translate="no">CS 186</span><span class="courses__name">Introduction to Database Systems</span></li>
+                            <li><span class="courses__code" translate="no">CS 168</span><span class="courses__name">Introduction to the Internet: Architecture and Protocols</span></li>
+                            <li><span class="courses__code" translate="no">CS 161</span><span class="courses__name">Computer Security</span></li>
+                            <li><span class="courses__code" translate="no">CS 70</span><span class="courses__name">Discrete Mathematics and Probability Theory</span></li>
+                            <li><span class="courses__code" translate="no">CS 61C</span><span class="courses__name">Great Ideas in Computer Architecture</span></li>
+                            <li><span class="courses__code" translate="no">CS 61B</span><span class="courses__name">Data Structures</span></li>
+                        </ul>
                     </div>
-                </div>
 
-                <div class="coursework-card" data-reveal="up">
-                    <h3 class="coursework-title">COMPSCI 161 – Computer Security</h3>
-                    <p class="coursework-description">
-                        Principles of secure system design, cryptography, network security, and real-world attack vectors.
-                        Building secure systems with authenticated encryption, key management, and access control.
-                    </p>
-                    <div class="coursework-topics">
-                        <span class="topic">Cryptography</span>
-                        <span class="topic">Web Security</span>
-                        <span class="topic">Threat Modeling</span>
+                    <div class="courses__group fade-in">
+                        <h3 class="courses__dept">Data Science</h3>
+                        <ul class="courses__list">
+                            <li><span class="courses__code" translate="no">DATA C104</span><span class="courses__name">Human Contexts and Ethics of Data</span></li>
+                            <li><span class="courses__code" translate="no">DATA C100</span><span class="courses__name">Principles and Techniques of Data Science</span></li>
+                            <li><span class="courses__code" translate="no">DATA C8</span><span class="courses__name">Foundations of Data Science</span></li>
+                        </ul>
                     </div>
-                </div>
 
-                <div class="coursework-card" data-reveal="up">
-                    <h3 class="coursework-title">COMPSCI 70 – Discrete Mathematics and Probability Theory</h3>
-                    <p class="coursework-description">
-                        Mathematical foundations for computer science. Covers logic, proofs, discrete structures,
-                        probability theory, and their applications to algorithms and complexity.
-                    </p>
-                    <div class="coursework-topics">
-                        <span class="topic">Discrete Math</span>
-                        <span class="topic">Probability</span>
-                        <span class="topic">Proofs</span>
-                    </div>
-                </div>
-
-                <div class="coursework-card" data-reveal="up">
-                    <h3 class="coursework-title">COMPSCI 61C – Great Ideas of Computer Architecture</h3>
-                    <p class="coursework-description">
-                        Machine structures and computer architecture. Covers C programming, assembly language,
-                        memory management, caching, and parallel computing concepts.
-                    </p>
-                    <div class="coursework-topics">
-                        <span class="topic">Computer Architecture</span>
-                        <span class="topic">C Programming</span>
-                        <span class="topic">Assembly</span>
-                    </div>
-                </div>
-
-                <div class="coursework-card" data-reveal="up">
-                    <h3 class="coursework-title">COMPSCI 61B – Data Structures</h3>
-                    <p class="coursework-description">
-                        Fundamental data structures and algorithms. Covers arrays, linked lists, trees, hash tables,
-                        graphs, and algorithm analysis. Programming in Java.
-                    </p>
-                    <div class="coursework-topics">
-                        <span class="topic">Data Structures</span>
-                        <span class="topic">Algorithms</span>
-                        <span class="topic">Java</span>
-                    </div>
-                </div>
-
-                <!-- DATA Courses -->
-                <div class="coursework-card" data-reveal="up">
-                    <h3 class="coursework-title">DATA C104 – Human Contexts and Ethics of Data</h3>
-                    <p class="coursework-description">
-                        Exploring ethical considerations, social impacts, and human-centered approaches to data science.
-                        Examining privacy, bias, fairness, and the responsible use of data in society.
-                    </p>
-                    <div class="coursework-topics">
-                        <span class="topic">Data Ethics</span>
-                        <span class="topic">Privacy</span>
-                        <span class="topic">Fairness & Bias</span>
-                    </div>
-                </div>
-
-                <div class="coursework-card" data-reveal="up">
-                    <h3 class="coursework-title">DATA C8 – Foundations of Data Science</h3>
-                    <p class="coursework-description">
-                        Introduction to data science using Python. Covers data manipulation, visualization,
-                        statistical inference, and basic machine learning concepts.
-                    </p>
-                    <div class="coursework-topics">
-                        <span class="topic">Python</span>
-                        <span class="topic">Data Visualization</span>
-                        <span class="topic">Statistics</span>
-                    </div>
-                </div>
-
-                <!-- EECS Courses -->
-                <div class="coursework-card" data-reveal="up">
-                    <h3 class="coursework-title">EECS 16B – Designing Information Devices and Systems II</h3>
-                    <p class="coursework-description">
-                        Continuation of EECS 16A. Covers circuits, signals, control systems, and machine learning fundamentals
-                        with applications to real-world systems.
-                    </p>
-                    <div class="coursework-topics">
-                        <span class="topic">Circuits</span>
-                        <span class="topic">Control Systems</span>
-                        <span class="topic">Signals</span>
-                    </div>
-                </div>
-
-                <div class="coursework-card" data-reveal="up">
-                    <h3 class="coursework-title">EECS 16A – Designing Information Devices and Systems I</h3>
-                    <p class="coursework-description">
-                        Introduction to circuits, linear algebra, and systems thinking. Covers circuit analysis,
-                        op-amps, and mathematical foundations for engineering.
-                    </p>
-                    <div class="coursework-topics">
-                        <span class="topic">Circuits</span>
-                        <span class="topic">Linear Algebra</span>
-                        <span class="topic">Systems</span>
-                    </div>
-                </div>
-
-                <!-- ENGIN Courses -->
-                <div class="coursework-card" data-reveal="up">
-                    <h3 class="coursework-title">ENGIN 7 – Introduction to Computer Programming</h3>
-                    <p class="coursework-description">
-                        Introduction to programming for scientists and engineers using Python.
-                        Covers basic programming concepts, data structures, and problem-solving.
-                    </p>
-                    <div class="coursework-topics">
-                        <span class="topic">Python</span>
-                        <span class="topic">Programming Fundamentals</span>
-                        <span class="topic">Problem Solving</span>
-                    </div>
-                </div>
-
-                <!-- MATH Courses -->
-                <div class="coursework-card" data-reveal="up">
-                    <h3 class="coursework-title">MATH 53 – Multivariable Calculus</h3>
-                    <p class="coursework-description">
-                        Multivariable and vector calculus. Covers partial derivatives, multiple integrals,
-                        line integrals, and applications to physics and engineering.
-                    </p>
-                    <div class="coursework-topics">
-                        <span class="topic">Calculus</span>
-                        <span class="topic">Vectors</span>
-                        <span class="topic">Integration</span>
-                    </div>
-                </div>
-
-                <!-- PHYSICS Courses -->
-                <div class="coursework-card" data-reveal="up">
-                    <h3 class="coursework-title">PHYSICS 7A – Physics for Scientists and Engineers</h3>
-                    <p class="coursework-description">
-                        Mechanics, waves, and thermodynamics. Problem-solving and mathematical modeling of physical systems.
-                    </p>
-                    <div class="coursework-topics">
-                        <span class="topic">Mechanics</span>
-                        <span class="topic">Waves</span>
-                        <span class="topic">Thermodynamics</span>
+                    <div class="courses__group fade-in">
+                        <h3 class="courses__dept">EECS, Math and Physics</h3>
+                        <ul class="courses__list">
+                            <li><span class="courses__code" translate="no">EECS 16B</span><span class="courses__name">Designing Information Devices and Systems II</span></li>
+                            <li><span class="courses__code" translate="no">EECS 16A</span><span class="courses__name">Designing Information Devices and Systems I</span></li>
+                            <li><span class="courses__code" translate="no">ENGIN 7</span><span class="courses__name">Introduction to Programming for Scientists and Engineers</span></li>
+                            <li><span class="courses__code" translate="no">MATH 53</span><span class="courses__name">Multivariable Calculus</span></li>
+                            <li><span class="courses__code" translate="no">PHYSICS 7A</span><span class="courses__name">Physics for Scientists and Engineers</span></li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section section-alt">
-        <div class="container">
-            <h2 class="section-title" data-reveal="up">Get In Touch</h2>
-            <p class="contact-subtitle" data-reveal="up">
-                I'm always open to discussing new opportunities, projects, or just having a chat!
-            </p>
-            <div class="social-links">
-                <a href="https://github.com/DarrenZ04" class="social-link" data-reveal="left" target="_blank" rel="noopener noreferrer">
-                    <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                    </svg>
-                    <span>GitHub</span>
-                </a>
-                <a href="https://www.linkedin.com/in/darren-zeng-b53675214/" class="social-link" data-reveal="right" target="_blank" rel="noopener noreferrer">
-                    <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                    </svg>
-                    <span>LinkedIn</span>
-                </a>
+        <section id="contact" class="section section--contact has-decor">
+            <span class="decor decor--square" aria-hidden="true" style="--c: var(--green); --s: 128px; --r: -12deg; bottom: 10%; right: 6%;"></span>
+            <span class="decor decor--plus" aria-hidden="true" style="--c: var(--amber); --s: 32px; top: 30%; right: 16%;"></span>
+            <div class="wrap contact">
+                <h2 class="section__title fade-in">Contact</h2>
+                <p class="contact__status fade-in"><span class="dot" aria-hidden="true"></span>Open to opportunities</p>
+                <a href="mailto:darrenzeng@berkeley.edu" class="contact__email fade-in">darrenzeng@berkeley.edu</a>
+                <ul class="contact__links fade-in">
+                    <li>
+                        <a href="https://github.com/DarrenZ04" target="_blank" rel="noopener noreferrer">
+                            <span class="contact__label">
+                                <svg class="contact__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23a11.5 11.5 0 0 1 3-.405c1.02.005 2.047.138 3.006.405 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.22 0 4.61-2.807 5.625-5.479 5.92.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                                github.com/DarrenZ04
+                            </span>
+                            <span class="arw" aria-hidden="true">&#8599;</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/darrenz04/" target="_blank" rel="noopener noreferrer">
+                            <span class="contact__label">
+                                <svg class="contact__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                                linkedin.com/in/darrenz04
+                            </span>
+                            <span class="arw" aria-hidden="true">&#8599;</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
+    </main>
+
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Darren Zeng. All rights reserved.</p>
+        <div class="footer__strip" aria-hidden="true"></div>
+        <div class="wrap footer__inner">
+            <a href="#about" class="footer__top">Darren Zeng <span class="footer__up" aria-hidden="true">&#8593;</span></a>
+            <nav class="footer__nav" aria-label="Footer">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#coursework">Coursework</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <p class="footer__meta">&copy; 2026 Darren Zeng, Berkeley, CA</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
